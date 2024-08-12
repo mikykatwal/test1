@@ -40,6 +40,10 @@ jobs:
           fetch-depth: 1
           ref: ${{ env.REF }}
 
+      - name: Print secret
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run script
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
